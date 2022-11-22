@@ -24,6 +24,13 @@ provider "helm" {
   }
 }
 
+module "argocd" {
+  source  = "aigisuk/argocd/kubernetes"
+  version = "0.2.3"
+
+  insecure = true
+}
+
 module "eks" {
   source  = "terraform-aws-modules/eks/aws"
   version = "~> 18.0"
